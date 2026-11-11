@@ -1,0 +1,16 @@
+{
+  "verified_utc": "2026-11-11T15:42:52.629743+00:00",
+  "model": "Qwen/Qwen3.5-9B",
+  "fine_tuned_adapter": "autoflow-pilot-qwen35-v4",
+  "v4_adapter_sha256": "3bcb11bfe42a364ddcfe33187ceed2f3e0a827e9a7c76137f9d92d3a30a7e873",
+  "parent_v3_adapter_sha256": "e12764c4929333f49e5ae4b58c4fb39e349a8497ac329f86f6236ea2963c4d0d",
+  "benchmarks": {
+    "sap_open_item_audit_self_test": "PASSED",
+    "due_date_backend_guard_self_test": "PASSED",
+    "salesforce_servicenow_16_case_suite": "16/16 PASSED",
+    "previously_missed_test_case_V3_TEST_D_0001_e4a7d3d26a30": "PASSED (200/200)",
+    "previously_missed_val_case_V3_VALIDATION_D_0009_8c3a7629cbde": "PASSED (200/200)",
+    "multi_turn_tool_calling_bfloat16": "4/4 PASSED",
+    "final_workflow_summary_bfloat16": "4/4 PASSED"
+  }
+}

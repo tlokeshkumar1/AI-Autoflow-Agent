@@ -6,202 +6,85 @@ tags:
 - base_model:adapter:Qwen/Qwen3.5-9B
 - lora
 - transformers
+- finance
+- accounts-receivable
+- agent
 ---
 
-# Model Card for Model ID
+# AutoFlow Pilot Qwen-3.5-9B (V4)
 
-<!-- Provide a quick summary of what the model is/does. -->
-
-
+**AutoFlow Pilot V4** is a LoRA adapter fine-tuned on top of `Qwen/Qwen3.5-9B` specifically designed for autonomous enterprise Accounts Receivable (AR) management, policy enforcement, invoice reconciliation, and cross-platform orchestration across ERP (SAP S/4HANA), CRM (Salesforce), and ITSM (ServiceNow).
 
 ## Model Details
 
-### Model Description
-
-<!-- Provide a longer summary of what this model is. -->
-
-
-
-- **Developed by:** [More Information Needed]
-- **Funded by [optional]:** [More Information Needed]
-- **Shared by [optional]:** [More Information Needed]
-- **Model type:** [More Information Needed]
-- **Language(s) (NLP):** [More Information Needed]
-- **License:** [More Information Needed]
-- **Finetuned from model [optional]:** [More Information Needed]
-
-### Model Sources [optional]
-
-<!-- Provide the basic links for the model. -->
-
-- **Repository:** [More Information Needed]
-- **Paper [optional]:** [More Information Needed]
-- **Demo [optional]:** [More Information Needed]
-
-## Uses
-
-<!-- Address questions around how the model is intended to be used, including the foreseeable users of the model and those affected by the model. -->
-
-### Direct Use
-
-<!-- This section is for the model use without fine-tuning or plugging into a larger ecosystem/app. -->
-
-[More Information Needed]
-
-### Downstream Use [optional]
-
-<!-- This section is for the model use when fine-tuned for a task, or when plugged into a larger ecosystem/app -->
-
-[More Information Needed]
-
-### Out-of-Scope Use
-
-<!-- This section addresses misuse, malicious use, and uses that the model will not work well for. -->
-
-[More Information Needed]
-
-## Bias, Risks, and Limitations
-
-<!-- This section is meant to convey both technical and sociotechnical limitations. -->
-
-[More Information Needed]
-
-### Recommendations
-
-<!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
-
-Users (both direct and downstream) should be made aware of the risks, biases and limitations of the model. More information needed for further recommendations.
-
-## How to Get Started with the Model
-
-Use the code below to get started with the model.
-
-[More Information Needed]
-
-## Training Details
-
-### Training Data
-
-<!-- This should link to a Dataset Card, perhaps with a short stub of information on what the training data is all about as well as documentation related to data pre-processing or additional filtering. -->
-
-[More Information Needed]
-
-### Training Procedure
-
-<!-- This relates heavily to the Technical Specifications. Content here should link to that section when it is relevant to the training procedure. -->
-
-#### Preprocessing [optional]
-
-[More Information Needed]
-
-
-#### Training Hyperparameters
-
-- **Training regime:** [More Information Needed] <!--fp32, fp16 mixed precision, bf16 mixed precision, bf16 non-mixed precision, fp16 non-mixed precision, fp8 mixed precision -->
-
-#### Speeds, Sizes, Times [optional]
-
-<!-- This section provides information about throughput, start/end time, checkpoint size if relevant, etc. -->
-
-[More Information Needed]
-
-## Evaluation
-
-<!-- This section describes the evaluation protocols and provides the results. -->
-
-### Testing Data, Factors & Metrics
-
-#### Testing Data
-
-<!-- This should link to a Dataset Card if possible. -->
-
-[More Information Needed]
-
-#### Factors
-
-<!-- These are the things the evaluation is disaggregating by, e.g., subpopulations or domains. -->
-
-[More Information Needed]
-
-#### Metrics
-
-<!-- These are the evaluation metrics being used, ideally with a description of why. -->
-
-[More Information Needed]
-
-### Results
-
-[More Information Needed]
-
-#### Summary
-
-
-
-## Model Examination [optional]
-
-<!-- Relevant interpretability work for the model goes here -->
-
-[More Information Needed]
-
-## Environmental Impact
-
-<!-- Total emissions (in grams of CO2eq) and additional considerations, such as electricity usage, go here. Edit the suggested text below accordingly -->
-
-Carbon emissions can be estimated using the [Machine Learning Impact calculator](https://mlco2.github.io/impact#compute) presented in [Lacoste et al. (2019)](https://arxiv.org/abs/1910.09700).
-
-- **Hardware Type:** [More Information Needed]
-- **Hours used:** [More Information Needed]
-- **Cloud Provider:** [More Information Needed]
-- **Compute Region:** [More Information Needed]
-- **Carbon Emitted:** [More Information Needed]
-
-## Technical Specifications [optional]
-
-### Model Architecture and Objective
-
-[More Information Needed]
-
-### Compute Infrastructure
-
-[More Information Needed]
-
-#### Hardware
-
-[More Information Needed]
-
-#### Software
-
-[More Information Needed]
-
-## Citation [optional]
-
-<!-- If there is a paper or blog post introducing the model, the APA and Bibtex information for that should go in this section. -->
-
-**BibTeX:**
-
-[More Information Needed]
-
-**APA:**
-
-[More Information Needed]
-
-## Glossary [optional]
-
-<!-- If relevant, include terms and calculations in this section that can help readers understand the model or model card. -->
-
-[More Information Needed]
-
-## More Information [optional]
-
-[More Information Needed]
-
-## Model Card Authors [optional]
-
-[More Information Needed]
-
-## Model Card Contact
-
-[More Information Needed]
-### Framework versions
-
-- PEFT 0.21.2
+- **Model Name:** AutoFlow Pilot Qwen-3.5-9B (V4)
+- **Base Model:** [Qwen/Qwen3.5-9B](https://huggingface.co/Qwen/Qwen3.5-9B)
+- **Adapter Type:** PEFT LoRA
+- **LoRA Hyperparameters:**
+  - `r`: 8
+  - `lora_alpha`: 16
+  - `lora_dropout`: 0.0
+  - `target_modules`: `q_proj`, `k_proj`, `v_proj`, `o_proj`, `gate_proj`, `up_proj`, `down_proj`, `out_proj`, `in_proj_a`, `in_proj_b`, `in_proj_z`, `in_proj_qkv`
+  - `bias`: `none`
+  - `task_type`: `CAUSAL_LM`
+- **Precision:** Native `bfloat16`
+- **Adapter Weights SHA256:** `3bcb11bfe42a364ddcfe33187ceed2f3e0a827e9a7c76137f9d92d3a30a7e873`
+- **Parent V3 Adapter SHA256:** `e12764c4929333f49e5ae4b58c4fb39e349a8497ac329f86f6236ea2963c4d0d`
+
+## Intended Use
+
+- **Direct Use:**
+  - Automated evaluation of accounts receivable against corporate billing policy.
+  - Deterministic decision mapping (`review_hold`, `skip_paid`, `skip_not_due`, `approval_required`, `task_and_draft`).
+  - Safe generation of customized collection follow-up communications and action plans.
+  - Multi-turn tool calling and structured protocol summaries.
+- **Out of Scope:**
+  - Unsupervised execution of monetary transfers or ledger write-offs without human approval.
+  - Using untrusted invoice fields as executable system instructions.
+
+## Policy Enforcement Logic
+
+The adapter is trained to follow strict hierarchical evaluation:
+1. `on_hold == True` $\rightarrow$ `review_hold`
+2. `outstanding_minor == 0` $\rightarrow$ `skip_paid`
+3. `due_date >= as_of` $\rightarrow$ `skip_not_due`
+4. `approval_required == True` $\rightarrow$ `approval_required`
+5. Otherwise $\rightarrow$ `task_and_draft`
+
+## Verification & Benchmark Summary
+
+| Benchmark Suite | Result | Status |
+| :--- | :---: | :---: |
+| SAP Open-Item Audit Self-Test | PASSED | Verified |
+| Due-Date Backend Guard Self-Test | PASSED | Verified |
+| Salesforce & ServiceNow 16-Case Suite | 16/16 PASSED | Verified |
+| Regression Case `V3-TEST-D-0001-e4a7d3d26a30` | 200/200 PASSED | Verified |
+| Regression Case `V3-VALIDATION-D-0009-8c3a7629cbde` | 200/200 PASSED | Verified |
+| Multi-Turn Tool Calling (`bfloat16`) | 4/4 PASSED | Verified |
+| Final Workflow Summary Protocol (`bfloat16`) | 4/4 PASSED | Verified |
+
+## How to Get Started
+
+```python
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from peft import PeftModel
+
+base_model_name = "Qwen/Qwen3.5-9B"
+adapter_path = "path/to/autoflow-pilot-qwen35-v4"
+
+tokenizer = AutoTokenizer.from_pretrained(adapter_path, trust_remote_code=True)
+base_model = AutoModelForCausalLM.from_pretrained(
+    base_model_name,
+    torch_dtype=torch.bfloat16,
+    device_map="auto",
+    trust_remote_code=True
+)
+model = PeftModel.from_pretrained(base_model, adapter_path)
+model.eval()
+```
+
+### Framework Versions
+- PEFT 0.18.1 / 0.21.2
+- Transformers 4.40+
+- PyTorch 2.1+

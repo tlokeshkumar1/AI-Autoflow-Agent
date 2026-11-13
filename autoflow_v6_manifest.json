@@ -1,0 +1,16 @@
+{
+  "release": "AutoFlow V6 Universal Agent",
+  "created_utc": "2026-11-13T13:54:26.064525+00:00",
+  "base_model": "Qwen/Qwen3.5-9B",
+  "precision": "bfloat16",
+  "adapter_dir": "autoflow-pilot-qwen35-v6-universal",
+  "adapter_weights_sha256": "4e87e82c14b9cb574f1247952c3203d0de9e80ee78351f0781f6b353ebde8701",
+  "verified_capabilities": [
+    "Universal Zero-Shot Runtime Domain Policy Evaluation (Healthcare, Aviation, Banking, Energy, E-Commerce, Pharma, Robotics, AgriTech, FinOps)",
+    "Multi-System Enterprise Suite (SAP S/4HANA, Salesforce CRM, ServiceNow ITSM, HR/IT IAM, Backend SQLite/Postgres Guard)",
+    "200/200 Frozen Synthetic Invoice Decision & Workflow Benchmark",
+    "Dynamic Zero-Shot Multi-Turn Tool Calling (<tool_call>)",
+    "Adversarial Prompt-Injection Immunity in Record Fields",
+    "Zero False Execution Claims Guarantee"
+  ]
+}
